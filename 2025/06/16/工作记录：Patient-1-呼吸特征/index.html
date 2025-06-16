@@ -13,7 +13,7 @@
 
 
 
-<title>Hexo Chic底部添加古诗词 | Yartin</title>
+<title>工作记录：Patient 1 特征 | Yartin</title>
 
 
 
@@ -203,7 +203,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hexo Chic底部添加古诗词</h1>
+            <h1 class="post-title">工作记录：Patient 1 特征</h1>
             
                 <div class="post-meta">
                     
@@ -212,14 +212,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">June 15, 2025&nbsp;&nbsp;18:42:10</a>
+                        Date: <a href="#">June 16, 2025&nbsp;&nbsp;14:43:00</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E4%BD%86%E6%98%AF%E6%9C%89%E7%94%A8%E4%B8%8D%E5%A4%AA%E5%8F%AF%E8%83%BD/">可能有用但是有用不太可能</a>
+                                <a href="/categories/%E8%84%91%E5%AD%90%E8%AE%B0%E4%B8%8D%E4%BD%8F%E5%B0%B1%E5%BA%94%E8%AF%A5%E5%86%99%E4%B8%8B%E6%9D%A5/">脑子记不住就应该写下来</a>
                             
                         </span>
                     
@@ -228,15 +228,81 @@
         </header>
 
         <div class="post-content">
-            <h1 id="Hexo-Chic-底部添加古诗词"><a href="#Hexo-Chic-底部添加古诗词" class="headerlink" title="Hexo Chic 底部添加古诗词"></a>Hexo Chic 底部添加古诗词</h1><p>使用 Hexo 搭建博客后可能需要一些自定义修改。<br>要得可口，亲自动手。很喜欢chic的整体风格，但很多细节上的呈现有些自己的想法，空闲时间一点一点实现吧。<br>例如，想要实现在页面底部添加随机古诗词，并且每次加载时刷新。</p>
-<h2 id="修改-Chic-layout-partial-footer-ejs"><a href="#修改-Chic-layout-partial-footer-ejs" class="headerlink" title="修改 Chic/layout/_partial/footer.ejs"></a>修改 <code>Chic/layout/_partial/footer.ejs</code></h2><p>在文件中添加以下代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://sdk.jinrishici.com/v2/browser/jinrishici.js&quot;</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;poem-container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;poem_sentence&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: inline;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    ——</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;poem_info&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: inline;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">jinrishici.<span class="title function_">load</span>(<span class="keyword">function</span>(<span class="params">result</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> sentence = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;#poem_sentence&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> info = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;#poem_info&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">    sentence.<span class="property">innerHTML</span> = result.<span class="property">data</span>.<span class="property">content</span></span></span><br><span class="line"><span class="language-javascript">    info.<span class="property">innerHTML</span> = <span class="string">&#x27;【&#x27;</span> + result.<span class="property">data</span>.<span class="property">origin</span>.<span class="property">dynasty</span> + <span class="string">&#x27;】&#x27;</span> + result.<span class="property">data</span>.<span class="property">origin</span>.<span class="property">author</span> + <span class="string">&#x27;《&#x27;</span> + result.<span class="property">data</span>.<span class="property">origin</span>.<span class="property">title</span> + <span class="string">&#x27;》&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="修改-Chic-source-css-layout-styl"><a href="#修改-Chic-source-css-layout-styl" class="headerlink" title="修改 Chic/source/css/layout.styl"></a>修改 <code>Chic/source/css/layout.styl</code></h2><p>由于 <code>layout.styl</code> 中规定了 <code>height</code> 与 <code>line-height</code> 数值，因此直接添加换行 <code>&lt;br&gt;</code> 可能效果不佳。建议调整 <code>footer</code> 字段样式：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.footer</span></span><br><span class="line">  <span class="attribute">height</span> <span class="number">4rem</span></span><br><span class="line">  <span class="attribute">width</span> <span class="number">100%</span></span><br><span class="line">  <span class="attribute">text-align</span> center</span><br><span class="line">  <span class="attribute">line-height</span> <span class="number">1.5rem</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>后续可能修改成自己词库的内容，暂时先用这个吧。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.xiaoledeng.com/2023/12/15/website-footer-add-chinese-poetry/">个人网站底部添加中华诗词 - Xiao-Le Deng (邓小乐)</a></p>
+            <h2 id="Patient-1-基础信息"><a href="#Patient-1-基础信息" class="headerlink" title="Patient 1 基础信息"></a>Patient 1 基础信息</h2><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>年龄</td>
+<td>86</td>
+</tr>
+<tr>
+<td>性别</td>
+<td>男</td>
+</tr>
+<tr>
+<td>身高 (cm)</td>
+<td>177</td>
+</tr>
+<tr>
+<td>体重 (kg)</td>
+<td>70</td>
+</tr>
+<tr>
+<td>已通气时间 (天或小时)</td>
+<td>4d</td>
+</tr>
+<tr>
+<td>病情诊断</td>
+<td>MODS（呼吸、循环、血液、肾脏）</td>
+</tr>
+<tr>
+<td>呼吸机控制通气模式</td>
+<td>VC-AC</td>
+</tr>
+<tr>
+<td>APACHE II 评分</td>
+<td>37</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="ASYNC-特征"><a href="#ASYNC-特征" class="headerlink" title="ASYNC 特征"></a>ASYNC 特征</h2><p>具有明显的 <strong>多重触发(Double Trigger)</strong> 与 <strong>过早循环(Premature Cycle)</strong> 特性。典型周期如下：</p>
+<h3 id="多重触发"><a href="#多重触发" class="headerlink" title="多重触发"></a>多重触发</h3><p><img src="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/DT.png"></p>
+<p><strong>描述：</strong><br>上一次呼吸的呼气相阶段由于可能的自主呼吸努力使得气道压低于呼吸机触发阈值，引起下一次送气。</p>
+<p><strong>特征：</strong></p>
+<ol>
+<li>呼气相未能完成，约在呼气开始后 0.6s 内开始下一次呼吸，呼气时间极短。</li>
+<li>容量具有较明显的向上偏移，即吸入气体体积大于呼出气体。</li>
+<li>多重触发时，患者每次呼吸后肺内留存的气体量逐渐上升，导致肺顺应性明显下降。</li>
+<li>流量控制时，呼吸机需要提供更高的气道压才能维持流量，峰压和平台压均有上升。</li>
+<li>PV-loop中，呼气相以接近吸气阶段K2的速率快速降低到低于PEEP处，未有明显斜率拐点，且容量未归零。</li>
+</ol>
+<hr>
+<h3 id="过早循环（触发失败）"><a href="#过早循环（触发失败）" class="headerlink" title="过早循环（触发失败）"></a>过早循环（触发失败）</h3><p><img src="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/PC.png"></p>
+<p><strong>描述：</strong><br>与多重触发类似，上一次呼吸的呼气相阶段由于可能的自主呼吸努力使得气道压出现明显波动，但未达到呼吸机触发阈值，未引起下一次送气。</p>
+<p><strong>特征：</strong></p>
+<ol>
+<li>呼气相开始后约 0.6s，患者自主呼吸努力使得气道压低于 PEEP，但未达到触发阈值，在小幅波动后回归 PEEP 附近，直到下一次呼吸。</li>
+<li>自主呼吸努力时，呼气流量迅速减少，吸气努力结束后，流量再次增大回归正常呼气阶段。</li>
+<li>若该呼吸是由上一呼吸周期的多重触发引起，则完整呼气通常会补偿排出肺部累积的气体，使得容量回归正常值。同时由于呼气相更完整，呼出气体更多，肺顺应性会有明显上升。</li>
+<li>PV-loop 中，由于患者的自主呼吸努力，使得呼气相中段出现明显的回折，出现明显负斜率段，随后以较平稳斜率回归 PEEP。这一回折转折的夹角为锐角，而后续平稳回归的夹角更大。</li>
+</ol>
+<hr>
+<h2 id="ASYNC-连续波形"><a href="#ASYNC-连续波形" class="headerlink" title="ASYNC 连续波形"></a>ASYNC 连续波形</h2><p><img src="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/InspASYNC.png"></p>
+<hr>
+<h2 id="正常波形"><a href="#正常波形" class="headerlink" title="正常波形"></a>正常波形</h2><p><img src="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/InspNormal.png"></p>
+<hr>
+<h2 id="可能原因"><a href="#可能原因" class="headerlink" title="可能原因"></a>可能原因</h2><ul>
+<li><p><strong>PEEP 设置不合理？</strong><br>由于多重触发导致的气体累积，患者自主呼吸引起的负压未能达到触发阈值，适当调高 PEEP？</p>
+</li>
+<li><p><strong>吸气呼气比不合理？</strong><br>患者总在呼气未完成时产生明显的自主呼吸努力？适当提升吸气段占比？</p>
+</li>
+<li><p><strong>异物刺激？</strong></p>
+</li>
+</ul>
 
         </div>
 
@@ -247,7 +313,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/%E6%8A%80%E6%9C%AF/"># 技术</a>
+                        <a href="/tags/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/"># 工作记录</a>
                     
                         
                 </span>
@@ -260,10 +326,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/">工作记录：Patient 1 特征</a>
             
-            
-            <a class="next" rel="next" href="/2025/06/15/%E6%B4%BE%E5%A4%A7%E6%98%9F%E8%AF%AD%E5%BD%95/">派大星语录</a>
+            <a class="next" rel="next" href="/2025/06/15/Hexo-Chic%E5%BA%95%E9%83%A8%E6%B7%BB%E5%8A%A0%E5%8F%A4%E8%AF%97%E8%AF%8D/">Hexo Chic底部添加古诗词</a>
             
         </section> -->
 
