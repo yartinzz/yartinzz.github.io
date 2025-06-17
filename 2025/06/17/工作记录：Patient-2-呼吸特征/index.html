@@ -13,7 +13,7 @@
 
 
 
-<title>工作记录：Patient 1 特征 | Yartin</title>
+<title>工作记录：Patient 2 特征 | Yartin</title>
 
 
 
@@ -203,7 +203,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">工作记录：Patient 1 特征</h1>
+            <h1 class="post-title">工作记录：Patient 2 特征</h1>
             
                 <div class="post-meta">
                     
@@ -212,7 +212,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">June 16, 2025&nbsp;&nbsp;14:43:00</a>
+                        Date: <a href="#">June 17, 2025&nbsp;&nbsp;9:38:45</a>
                         </span>
                     
                     
@@ -228,7 +228,7 @@
         </header>
 
         <div class="post-content">
-            <h2 id="Patient-1-基础信息"><a href="#Patient-1-基础信息" class="headerlink" title="Patient 1 基础信息"></a>Patient 1 基础信息</h2><table>
+            <h2 id="Patient-2-基本信息"><a href="#Patient-2-基本信息" class="headerlink" title="Patient 2 基本信息"></a>Patient 2 基本信息</h2><table>
 <thead>
 <tr>
 <th>项目</th>
@@ -237,17 +237,38 @@
 </thead>
 <tbody><tr>
 <td>呼吸机控制通气模式</td>
-<td>VC-AC</td>
+<td>VC-SIMV</td>
 </tr>
 <tr>
 <td>APACHE II 评分</td>
-<td>37</td>
+<td>19</td>
 </tr>
 </tbody></table>
 <hr>
-<h2 id="ASYNC-特征"><a href="#ASYNC-特征" class="headerlink" title="ASYNC 特征"></a>ASYNC 特征</h2><p>具有明显的 <strong>多重触发</strong>特性，在未能成功触发时表现为呼气期对抗。类似于 Double Trigger 与 Premature Cycle 定义，典型周期如下：</p>
-<h3 id="多重触发"><a href="#多重触发" class="headerlink" title="多重触发"></a>多重触发</h3><p><img src="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/DT.png"></p>
-<p><strong>描述：</strong><br>上一次呼吸的呼气相阶段由于可能的自主呼吸努力使得气道压低于呼吸机触发阈值，引起下一次送气。</p>
+<h2 id="ASYNC-特征"><a href="#ASYNC-特征" class="headerlink" title="ASYNC 特征"></a>ASYNC 特征</h2><p>由于控制模式为 VC-SIMV，整体波形中存在两类：</p>
+<ol>
+<li>由呼吸机控制触发的波形，控制方式为容量控制，吸气呼气比 1:2。理想情况下，单次吸气 1s，呼气 2s，循环执行。</li>
+<li>由患者自主呼吸努力引起的呼吸波形，独立于 VC 控制阶段，吸气时间 1s。</li>
+</ol>
+<p>因此，人机对抗模式较为复杂：</p>
+<ul>
+<li>在控制吸气阶段，呼吸机通气可能引起患者神经反应，反向触发患者的自主呼吸努力，引起 <strong>反向触发模式 (Reverse Trigger)</strong>。</li>
+<li>在控制呼气阶段，患者可能在呼气段任意位置出现自主呼吸努力，表现为 <strong>多重触发</strong> 或 <strong>Premature Cycle</strong>。</li>
+<li>呼吸机自身通气策略可能引起 <strong>自动触发</strong>，表现为呼气期初期触发的一次呼吸，由于容量堆积，可能在快速达到容量或压力保护阈值后转为呼气。</li>
+</ul>
+<hr>
+<h2 id="典型周期"><a href="#典型周期" class="headerlink" title="典型周期"></a>典型周期</h2><h3 id="吸气期对抗"><a href="#吸气期对抗" class="headerlink" title="吸气期对抗"></a>吸气期对抗</h3><p><img src="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/%E5%90%B8%E6%B0%94%E6%9C%9F%E5%AF%B9%E6%8A%97.png"><br><img src="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/%E5%90%B8%E6%B0%94%E6%9C%9F%E6%9C%AB%E6%9C%9F%E5%AF%B9%E6%8A%97.png"></p>
+<p><strong>描述：</strong><br>呼吸机控制模式定期通气时引起患者神经反应，反向触发患者自主呼吸努力，引起吸气期显著对抗，通常发生在吸气初期。</p>
+<p><strong>特征：</strong></p>
+<ol>
+<li>自主呼吸努力产生的负压显著影响压力波型，压力波型在上升期出现下降，有明显内凹。</li>
+<li>自主呼吸努力对流速有轻微影响，导致流速相较正常周期在对抗阶段略有上升。</li>
+<li>PV-loop 中吸气段的典型两段结构被破坏，压力值的降低表现为负斜率段，且可能存在多次。</li>
+<li>吸气末期自主对抗较轻微，表现为峰压降低，流速在吸气末端明显上升，PV-loop 中 k2 段出现内凹。</li>
+</ol>
+<hr>
+<h3 id="呼气期对抗"><a href="#呼气期对抗" class="headerlink" title="呼气期对抗"></a>呼气期对抗</h3><p><img src="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/%E5%91%BC%E6%B0%94%E6%9C%9F%E6%82%A3%E8%80%85%E8%A7%A6%E5%8F%91.png"></p>
+<p><strong>描述：</strong><br>呼气期，患者自主呼吸努力产生低于 PEEP 的负压并触发呼吸机送气，引起下一次呼吸。</p>
 <p><strong>特征：</strong></p>
 <ol>
 <li>呼气相未能完成，约在呼气开始后 0.6s 内开始下一次呼吸，呼气时间较短。</li>
@@ -256,28 +277,36 @@
 <li>流量控制时，呼吸机需要提供更高的气道压才能维持流量，峰压和平台压在下次触发时均有上升。</li>
 </ol>
 <hr>
-<h3 id="过早循环（触发失败）"><a href="#过早循环（触发失败）" class="headerlink" title="过早循环（触发失败）"></a>过早循环（触发失败）</h3><p><img src="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/PC.png"></p>
-<p><strong>描述：</strong><br>与多重触发类似，上一次呼吸的呼气相阶段由于可能的自主呼吸努力使得气道压出现明显波动，但未达到呼吸机触发阈值，未引起下一次送气。</p>
+<h3 id="呼气期触发失败"><a href="#呼气期触发失败" class="headerlink" title="呼气期触发失败"></a>呼气期触发失败</h3><p><img src="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/%E5%91%BC%E6%B0%94%E6%9C%9F%E8%A7%A6%E5%8F%91%E5%A4%B1%E8%B4%A5.png"></p>
+<p><strong>描述：</strong><br>呼气期，患者自主呼吸努力产生低于 PEEP 的负压，但未达到呼吸机触发阈值。</p>
 <p><strong>特征：</strong></p>
 <ol>
 <li>呼气相开始后约 0.6s，患者自主呼吸努力使得气道压低于 PEEP，但未达到触发阈值，在小幅波动后回归 PEEP 附近，直到下一次呼吸。</li>
 <li>自主呼吸努力时，呼气流量迅速减少，吸气努力结束后，流量再次增大回归正常呼气阶段。</li>
-<li>若该呼吸是由上一呼吸周期的多重触发引起，则完整呼气通常会补偿排出肺部累积的气体，使得容量回归正常值。同时由于呼气相更完整，呼出气体更多，肺顺应性会有明显上升。</li>
 <li>PV-loop 中，由于患者的自主呼吸努力，使得呼气相中段出现明显的回折，显示出负斜率段，随后以较平稳斜率回归 PEEP。这一回折转折的夹角通常较小，而后续平稳回归的夹角更大。</li>
 </ol>
 <hr>
-<h2 id="ASYNC-连续波形"><a href="#ASYNC-连续波形" class="headerlink" title="ASYNC 连续波形"></a>ASYNC 连续波形</h2><p><img src="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/InspASYNC.png"></p>
+<h3 id="呼气期呼吸机自动触发"><a href="#呼气期呼吸机自动触发" class="headerlink" title="呼气期呼吸机自动触发"></a>呼气期呼吸机自动触发</h3><p><img src="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/%E5%91%BC%E6%B0%94%E6%9C%9F%E8%87%AA%E5%8A%A8%E8%A7%A6%E5%8F%911.png"><br><img src="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/%E5%91%BC%E6%B0%94%E6%9C%9F%E8%87%AA%E5%8A%A8%E8%A7%A6%E5%8F%912.png"></p>
+<p><strong>描述：</strong><br>呼气期未完成时，呼吸机自动触发下一次通气。</p>
+<p><strong>特征：</strong></p>
+<ol>
+<li>呼吸机触发无明显的自主呼吸努力特征，无明显负压。</li>
+<li>由于气体累积，可能导致本次吸气快速达到压力或容量保护阈值并转为呼气。</li>
+<li>由于上次气体未完全排出，若维持本次流量，呼吸机需要提供更高的气道压，压力波形的上升速率在初期有所提高，峰压和平台压均有上升。</li>
+</ol>
 <hr>
-<h2 id="正常波形"><a href="#正常波形" class="headerlink" title="正常波形"></a>正常波形</h2><p><img src="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/InspNormal.png"></p>
-<hr>
-<h2 id="可能原因"><a href="#可能原因" class="headerlink" title="可能原因"></a>可能原因</h2><ul>
-<li><p><strong>PEEP 设置不合理？</strong><br>由于多重触发导致的气体累积，患者自主呼吸引起的负压未能达到触发阈值，适当调高 PEEP？</p>
-</li>
-<li><p><strong>吸气呼气比不合理？</strong><br>患者总在呼气未完成时产生明显的自主呼吸努力？适当提升吸气段占比？</p>
-</li>
-<li><p><strong>异物刺激？</strong></p>
-</li>
+<h3 id="患者自主呼吸触发"><a href="#患者自主呼吸触发" class="headerlink" title="患者自主呼吸触发"></a>患者自主呼吸触发</h3><p><img src="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/%E6%82%A3%E8%80%85%E8%87%AA%E4%B8%BB%E8%A7%A6%E5%8F%91.png"></p>
+<p><strong>描述：</strong><br>呼气期，由患者自主呼吸努力触发下一次呼吸，但上一次呼吸较为完整，无明显容量堆积。</p>
+<p><strong>特征：</strong></p>
+<ul>
+<li>吸气初段压力上升速度较缓，但流量上升正常且数值较高。</li>
+<li>PV-loop 中吸气相曲线严重内凹，与流量异步（Flow ASYNC）特征相似。</li>
+<li>是否因患者自主呼吸有更高流量需求，尚不清楚是否具有普遍性。</li>
 </ul>
+<hr>
+<h3 id="无对抗容量控制"><a href="#无对抗容量控制" class="headerlink" title="无对抗容量控制"></a>无对抗容量控制</h3><p><img src="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/%E6%97%A0%E5%AF%B9%E6%8A%97%E5%AE%B9%E9%87%8F%E6%8E%A7%E5%88%B6.png"></p>
+<hr>
+<h3 id="混合-ASYNC"><a href="#混合-ASYNC" class="headerlink" title="混合 ASYNC"></a>混合 ASYNC</h3><p><img src="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/%E6%B7%B7%E5%90%88ASYNC.png"></p>
 
         </div>
 
@@ -301,10 +330,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/">工作记录：Patient 2 特征</a>
             
-            
-            <a class="next" rel="next" href="/2025/06/15/Hexo-Chic%E5%BA%95%E9%83%A8%E6%B7%BB%E5%8A%A0%E5%8F%A4%E8%AF%97%E8%AF%8D/">Hexo Chic底部添加古诗词</a>
+            <a class="next" rel="next" href="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E5%91%BC%E5%90%B8%E7%89%B9%E5%BE%81/">工作记录：Patient 1 特征</a>
             
         </section> -->
 
