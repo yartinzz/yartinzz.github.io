@@ -13,7 +13,7 @@
 
 
 
-<title>Category: 摸鱼的间隙总还是要工作 | Yartin</title>
+<title>工作记录：Patient 6 特征 | Yartin</title>
 
 
 
@@ -131,82 +131,139 @@
     }
 </script>
             <div class="main">
-                
+                <div class="container">
     
-
-<div class="container">
-    <div class="post-wrap categories">
-        <h2 class="post-title">-&nbsp;Categories · 摸鱼的间隙总还是要工作&nbsp;-</h2>
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
     </div>
-    
-    
-    
-    
-        <div class="post-wrap categories">
-            <div class="categories-card">
-                
-                    <div class="card-item">
-                        <div class="categories">
-                            <a href="/categories/%E6%91%B8%E9%B1%BC%E7%9A%84%E9%97%B4%E9%9A%99%E6%80%BB%E8%BF%98%E6%98%AF%E8%A6%81%E5%B7%A5%E4%BD%9C/%E6%95%B0%E6%8D%AE%E5%AE%A1%E9%98%85/">
-                                <h3>
-                                    <i class="iconfont icon-category" style="padding-right:3px"></i>
-                                    数据审阅
-                                </h3>
-                            </a>
-                            
-                            
-                            
-                            
-                                
-                                    
-                                        <article class="archive-item">
-                                            <a class="archive-item-link"
-                                               href="/2025/06/16/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-1-%E7%89%B9%E5%BE%81/">工作记录：Patient 1 特征</a>
-                                        </article>
-                                    
-                                
-                                    
-                                        <article class="archive-item">
-                                            <a class="archive-item-link"
-                                               href="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-2-%E7%89%B9%E5%BE%81/">工作记录：Patient 2 特征</a>
-                                        </article>
-                                    
-                                
-                                    
-                                        <article class="archive-item">
-                                            <a class="archive-item-link"
-                                               href="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-3-%E7%89%B9%E5%BE%81/">工作记录：Patient 3 特征</a>
-                                        </article>
-                                    
-                                
-                                    
-                                        <article class="archive-item">
-                                            <a class="archive-item-link"
-                                               href="/2025/06/17/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-4-%E7%89%B9%E5%BE%81/">工作记录：Patient 4 特征</a>
-                                        </article>
-                                    
-                                
-                                    
-                                        <article class="archive-item">
-                                            <a class="archive-item-link"
-                                               href="/2025/06/18/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-5-%E7%89%B9%E5%BE%81/">工作记录：Patient 5 特征</a>
-                                        </article>
-                                    
-                                
-                                    
-                                
-                                
-                                    <a class="more-post-link" href="/categories/%E6%91%B8%E9%B1%BC%E7%9A%84%E9%97%B4%E9%9A%99%E6%80%BB%E8%BF%98%E6%98%AF%E8%A6%81%E5%B7%A5%E4%BD%9C/%E6%95%B0%E6%8D%AE%E5%AE%A1%E9%98%85/">More >></a>
-                                
-                            
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
-    
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
 </div>
 
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">工作记录：Patient 6 特征</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Yartin</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">June 18, 2025&nbsp;&nbsp;18:18:12</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E6%91%B8%E9%B1%BC%E7%9A%84%E9%97%B4%E9%9A%99%E6%80%BB%E8%BF%98%E6%98%AF%E8%A6%81%E5%B7%A5%E4%BD%9C/">摸鱼的间隙总还是要工作</a>
+                            
+                                <a href="/categories/%E6%91%B8%E9%B1%BC%E7%9A%84%E9%97%B4%E9%9A%99%E6%80%BB%E8%BF%98%E6%98%AF%E8%A6%81%E5%B7%A5%E4%BD%9C/%E6%95%B0%E6%8D%AE%E5%AE%A1%E9%98%85/">数据审阅</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="呼吸机控制通气模式"><a href="#呼吸机控制通气模式" class="headerlink" title="呼吸机控制通气模式"></a>呼吸机控制通气模式</h2><p>PC-SIMV</p>
+<hr>
+<h2 id="ASYNC-特征"><a href="#ASYNC-特征" class="headerlink" title="ASYNC 特征"></a>ASYNC 特征</h2><p>与 Patient 4 特征极为相似。</p>
+
+        </div>
+
+        
+        <!-- <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/"># 工作记录</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2025/06/18/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95%EF%BC%9APatient-5-%E7%89%B9%E5%BE%81/">工作记录：Patient 5 特征</a>
+            
+        </section> -->
+
+
+    </article>
+</div>
 
             </div>
             <footer id="footer" class="footer">
